@@ -1,0 +1,7 @@
+node_modules/
+dist/
+dist-bundle/
+test/
+custom-elements.json
+# top level source
+*.ts.map

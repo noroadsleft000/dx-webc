@@ -1,0 +1,46 @@
+:root {
+    --dx-theme-bg-color: #ffffff;
+    --dx-theme-font-color: #303030;
+    --dx-color-blue1: #0D66D0;
+    --dx-color-blue2: #3680FF;
+    --dx-color-gray1: #f9f9f9;
+    --dx-color-gray2: #e9e9e9;
+    --dx-color-gray3: #ddd;
+    --dx-color-gray4: #aaa;
+    --dx-icon-color: #707070;
+    --dx-icon-hover-color: #3680FF;
+    --dx-icon-size-xs: 16px;
+    --dx-icon-size-sm: 18px;
+    --dx-icon-size-md: 24px;
+    --dx-icon-size-lg: 32px;
+    --dx-icon-size-xl: 48px;
+    background: #ffffff;
+    color: #303030;
+}
+
+.dx-theme-light {
+    /* light is default theme, inherit from root */
+    background: #ffffff;
+    color: #303030;
+}
+.dx-theme-dark {
+    --dx-theme-bg-color: #303030;
+    --dx-theme-font-color: #ffffff;
+    --dx-color-blue1: #0D66D0;
+    --dx-color-blue2: #3680FF;
+    --dx-color-gray1: #f9f9f9;
+    --dx-color-gray2: #e9e9e9;
+    --dx-color-gray3: #ddd;
+    --dx-color-gray4: #aaa;
+    background: var(--dx-theme-bg-color);
+    color: var(--dx-theme-font-color);
+}
+
+*, *:before, *:after { margin: 0; padding: 0; border: none; box-sizing: inherit; }
+body { box-sizing: border-box; font-family: "Nunito Sans", -apple-system, ".SFNSText-Regular", "San Francisco", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+input:focus, textarea:focus, select:focus { outline: none; }
+
+.dx-spacer { flex: 1; }
+.dx-circle { border-radius: 50%; }
+.dx-fill-parent { width: 100%; height: 100%; }
+.dx-text-trunc { max-width: 100px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }

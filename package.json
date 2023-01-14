@@ -1,0 +1,74 @@
+{
+  "name": "@nrl/dx-webc",
+  "version": "0.0.1",
+  "description": "dx web components",
+  "sideEffects": false,
+  "main": "./dist-bundle/index.bundle.js",
+  "module": "./dist/index.js",
+  "types":  "./dist/index.d.ts",
+  "keywords": [],
+  "author": {
+    "name": "No roads left",
+    "email": "noroadsleft000@gmail.com"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "7.20.12",
+    "@rollup/plugin-commonjs": "24.0.0",
+    "@rollup/plugin-node-resolve": "15.0.1",
+    "@rollup/plugin-terser": "0.3.0",
+    "@storybook/addon-actions": "^6.5.15",
+    "@storybook/addon-essentials": "^6.5.15",
+    "@storybook/addon-links": "^6.5.15",
+    "@storybook/builder-webpack5": "^6.5.15",
+    "@storybook/manager-webpack5": "^6.5.15",
+    "@storybook/web-components": "^6.5.15",
+    "@types/react": "18.0.26",
+    "@typescript-eslint/eslint-plugin": "4.31.0",
+    "@typescript-eslint/parser": "4.31.0",
+    "babel-loader": "^8.3.0",
+    "eslint": "7.32.0",
+    "eslint-plugin-storybook": "^0.6.8",
+    "lit-html": "^2.5.0",
+    "postcss": "8.4.20",
+    "rollup": "3.9.1",
+    "rollup-plugin-postcss": "4.0.2",
+    "rollup-plugin-typescript2": "0.34.1",
+    "typescript": "4.5.4",
+    "webpack": "5.75.0"
+  },
+  "dependencies": {
+    "lit": "2.5.0",
+    "tslib": "2.3.1"
+  },
+  "peerDependencies": {
+    "lit": "2.5.0"
+  },
+  "scripts": {
+    "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
+    "lint:fix": "eslint src --ext .js,.jsx,.ts,.tsx --fix",
+    "build": "tsc && npm run build:bundle",
+    "build:dev": "tsc && npm run build:bundle-dev",
+    "build:bundle-dev": "export NODE_ENV='development' npm run lint && rollup -c",
+    "build:bundle-prod": "export NODE_ENV='production' npm run lint && rollup -c",
+    "build:bundle-watch": "npm run build:dev -- --watch",
+    "build:bundle": "npm run build:bundle-prod",
+    "storybook": "start-storybook -p 6006",
+    "storybook:build": "build-storybook",
+    "build-storybook": "build-storybook"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.(js|jsx|ts|tsx)": [
+      "npm run lint:fix",
+      "git add"
+    ]
+  },
+  "engines": {
+    "node": ">=16.13.0"
+  }
+}

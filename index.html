@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dx web components</title>
+    <link rel="stylesheet" href="dist/index.css" type="text/css" />
+    <script type="module" src="dist/index.bundle.js" ></script>
+</head>
+<body>
+    <div>
+        <dx-button>Default</dx-button>
+        <dx-button variant="primary" >Primary</dx-button>
+        <dx-button variant="secondary" >Secondary</dx-button>
+        <dx-button variant="warning" >Warning</dx-button>
+        <dx-button variant="error" >Error</dx-button>
+        <dx-button variant="icon" >
+            Icon
+            <slot id="icon" >
+                <dx-account-icon></dx-account-icon>
+            </slot>
+        </dx-button>
+        <dx-button variant="icon" silent="true" >
+            Icon
+            <slot id="icon" >
+                <dx-account-icon></dx-account-icon>
+            </slot>
+        </dx-button>
+    </div>
+    <div>
+        <dx-account-icon></dx-account-icon>
+    </div>
+</body>
+</html>
